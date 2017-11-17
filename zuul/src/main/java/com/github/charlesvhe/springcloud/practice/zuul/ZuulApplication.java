@@ -16,10 +16,6 @@ import org.springframework.web.filter.CorsFilter;
 @EnableDiscoveryClient
 @EnableZuulProxy
 public class ZuulApplication {
-    @Bean
-    public PreFilter preFilter() {
-        return new PreFilter();
-    }
 
     @Bean
     public CorsFilter corsFilter() {

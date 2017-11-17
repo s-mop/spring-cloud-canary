@@ -9,30 +9,30 @@ import javax.servlet.http.HttpServletRequest;
  * @author GuoXinYuan
  *
  */
-public class XHeaderHolder {
-    public static final String X_HEADER = "x_header";
+public class TagHolder {
+    public static final String X_TAG = "x-tag";
 
-    private static final ThreadLocal<Map<String, String>> X_HEADER_MAP = new ThreadLocal<>();
+    private static final ThreadLocal<Map<String, String>> X_TAG_MAP = new ThreadLocal<>();
 
     public static void put(String key, String value) {
-        Map<String, String> map = X_HEADER_MAP.get();
+        Map<String, String> map = X_TAG_MAP.get();
         if (map == null)
             map = new HashMap<>();
         map.put(key, value);
-        X_HEADER_MAP.set(map);
+        X_TAG_MAP.set(map);
     }
 
     public static void putHeader(HttpServletRequest req) {
-        put(X_HEADER, req.getHeader(X_HEADER));
+        put(X_TAG, req.getHeader(X_TAG));
     }
 
     public static boolean checkMap(Map<String, String> map) {
         if (map != null) {
-            String mapCanary = map.get(X_HEADER);
+            String mapCanary = map.get(X_TAG);
             if (mapCanary != null) {
-                Map<String, String> headerMap = X_HEADER_MAP.get();
+                Map<String, String> headerMap = X_TAG_MAP.get();
                 if (headerMap != null) {
-                    String localCanary = headerMap.get(X_HEADER);
+                    String localCanary = headerMap.get(X_TAG);
                     return localCanary != null && mapCanary.equals(localCanary);
                 }
             }

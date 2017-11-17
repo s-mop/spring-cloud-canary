@@ -28,7 +28,7 @@ public class TagMetadataRule extends WeightMetadataRule {
         for (Server server : serverList) {
             DiscoveryEnabledServer tagFiltered = (DiscoveryEnabledServer) server;
             final Map<String, String> metadata = tagFiltered.getInstanceInfo().getMetadata();
-            if (XHeaderHolder.checkMap(metadata)) {
+            if (TagHolder.checkMap(metadata)) {
                 tagFilteredServerList.add(tagFiltered);
             }
         }
