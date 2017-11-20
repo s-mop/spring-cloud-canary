@@ -9,9 +9,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-/**
- * Created by charles on 2017/5/22.
- */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableZuulProxy

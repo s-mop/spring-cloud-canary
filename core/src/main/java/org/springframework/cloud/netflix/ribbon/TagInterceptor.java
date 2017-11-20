@@ -8,7 +8,8 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 
 /**
- * Created by charles on 2017/5/26.
+ * @author GuoXinYuan
+ *
  */
 public class TagInterceptor implements ClientHttpRequestInterceptor {
 
