@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.HttpRequest;
+
+
 /**
  * @author GuoXinYuan
  *
@@ -24,6 +27,16 @@ public class TagHolder {
 
     public static void putHeader(HttpServletRequest req) {
         put(X_TAG, req.getHeader(X_TAG));
+    }
+    
+    public static void getHeader(HttpRequest req) {
+        Map<String, String> map = X_TAG_MAP.get();
+        if (map != null) {
+            String xTag = map.get(X_TAG);
+            if (xTag != null) {
+                req.getHeaders().add(X_TAG, xTag);
+            }
+        }
     }
 
     public static boolean checkMap(Map<String, String> map) {

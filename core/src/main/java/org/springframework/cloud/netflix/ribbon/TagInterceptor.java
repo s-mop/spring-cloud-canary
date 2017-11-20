@@ -17,9 +17,7 @@ public class TagInterceptor implements ClientHttpRequestInterceptor {
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
             throws IOException {
 
-        String first = request.getHeaders().getFirst(TagHolder.X_TAG);
-        request.getHeaders().add(TagHolder.X_TAG, first);
-
+        TagHolder.getHeader(request);
         return execution.execute(request, body);
     }
 }
