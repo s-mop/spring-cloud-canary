@@ -30,9 +30,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.charlesvhe</groupId>
-            <artifactId>spring-cloud-canary-core</artifactId>
-            <version>${parent.version}</version>
+            <groupId>org.smop</groupId>
+            <artifactId>spring-cloud-shunt</artifactId>
+            <version>0.8.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
